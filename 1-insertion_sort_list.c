@@ -12,9 +12,11 @@ void insertion_sort_list(listint_t **list)
 	listint_t *nodeprev = NULL, *current = NULL, *backup_current = NULL;
 	listint_t *printlist = NULL;
 
+	if (list == NULL || *list == NULL)
+		return;
 	current = *list; /* can we work with *list??? */
 	printlist = *list;
-        while (current)
+	while (current)
 	{
 		nodeprev = current->prev;
 		backup_current = current;
