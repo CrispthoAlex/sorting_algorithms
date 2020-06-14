@@ -23,22 +23,22 @@ void insertion_sort_list(listint_t **list)
 		while (nodeprev && nodeprev->n > current->n)
 		{
 			swap_node(nodeprev, current);
-			while(printlist->prev != NULL)
+			while (printlist->prev != NULL)
 				printlist = printlist->prev;
 			print_list(printlist);
 			nodeprev = current->prev;
 		}
 		current = backup_current->next;
 	}
-	while(printlist->prev != NULL)
+	while (printlist->prev != NULL)
 		printlist = printlist->prev;
 	*list = printlist;
 }
 
 /**
  * swap_node - swap two nodes of DLL
- * @nodeprev: nodeprev to swap (up) with nodecurrent (down)
- * @nodecurrent: nodecurrent (down) to swap with nodeprev (up)
+ * @prev: nodeprev to swap (up) with nodecurrent (down)
+ * @current: nodecurrent (down) to swap with nodeprev (up)
  */
 void swap_node(listint_t *prev, listint_t *current)
 {
