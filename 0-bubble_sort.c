@@ -1,15 +1,15 @@
 #include "sort.h"
 
 /**
- * bubble_sort - algorithm to sort
- * @array: our array unsorted to be sorted
+ * bubble_sort - sorts an array of integers in ascending order
+ * @array: array unsorted to be sorted
  * @size: size of array
  */
 void bubble_sort(int *array, size_t size)
 {
 	size_t pass = 0, offset = 0;
 
-	if (size < 2 || !array)
+	if (!size || size < 2 || !array)
 		return;
 
 	for (; pass < size; pass++)
