@@ -45,7 +45,7 @@ int partition(int *array, size_t size, int low, int high)
 
 	pivot = high;
 	min = low;
-	for (actual = low; actual < high; actual++)
+	for (actual = low; actual <= high; actual++)
 	{
 		if (array[actual] < array[pivot])
 		{
