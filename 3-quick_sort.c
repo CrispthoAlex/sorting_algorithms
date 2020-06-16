@@ -24,7 +24,7 @@ void quick_sort_rec(int *array, size_t size, int low, int high)
 {
 	int pivote;
 
-	if (low > high)
+	if (low >= high)
 		return;
 	pivote = partition(array, size, low, high);
 	quick_sort_rec(array, size, low, pivote - 1); /* Left */
