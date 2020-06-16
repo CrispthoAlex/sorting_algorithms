@@ -28,7 +28,7 @@ void quick_sort_rec(int *array, size_t size, int low, int high)
 		return;
 	pivote = partition(array, size, low, high);
 	quick_sort_rec(array, size, low, pivote - 1); /* Left */
-	quick_sort_rec(array, size, pivote + 1, high); /* Right */
+	quick_sort_rec(array, size, pivote + 1, high - 1); /* Right */
 }
 
 /**
@@ -62,7 +62,7 @@ int partition(int *array, size_t size, int low, int high)
 		swap_int(&array[pivot], &array[min]);
 		print_array(array, size);
 	}
-	return (pivot);
+	return (min);
 }
 
 /**
