@@ -62,7 +62,7 @@ int partition(int *array, size_t size, int low, int high)
 		swap_int(&array[pivot], &array[min]);
 		print_array(array, size);
 	}
-	return (pivot);
+	return (min);
 }
 
 /**
