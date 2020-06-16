@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-    int array[] = {1,0,0,0,1};
+    int array[] = {5,8,6,0,1};
     size_t n = sizeof(array) / sizeof(array[0]);
     int array2[] = {1, 0};
     size_t n2 = sizeof(array2) / sizeof(array2[0]);
