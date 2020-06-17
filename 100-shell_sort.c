@@ -9,24 +9,29 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i = 0, gap = 1;
+	size_t i = 0, gap = 1, pos = 0;
 	int actual;
 
 	if (size < 2 || !array)
 		return;
-	while (gap < size / 3)
+	while (gap < size)
 		gap = gap * 3 + 1;
+	if (gap > size)
+		gap = (gap - 1) / 3;
 	while (gap > 0)
 	{
-		for (i = 0; i < size; i += gap)
+		for (pos = 0; pos < size; pos++)
 		{
-			if ((i + gap) >= size)
-				break;
-			actual = i;
-			while (actual >= 0 && array[actual + gap] < array[actual])
+			for (i = 0; i < size; i += gap)
 			{
-				swap_int(&array[actual + gap], &array[actual]);
-				actual -= gap;
+				if ((i + gap + pos) >= size)
+					break;
+				actual = i + pos;
+				while (actual >= 0 && array[actual + gap] < array[actual])
+				{
+					swap_int(&array[actual + gap], &array[actual]);
+					actual -= gap;
+				}
 			}
 		}
 		gap = (gap - 1) / 3;
