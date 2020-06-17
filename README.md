@@ -111,4 +111,4 @@ Write in the file  `102-O`, the big O notations of the time complexity of the Co
 #  What did we learn? 
 Besides from good practices algorithms can be measure to determine a better way to perform task according with the project requirements, having a good time complexity in Big O assure you that your algorithm is gonna behave correctly against huge inputs.
 
-Code by [Crispthofer Murrain]([https://github.com/CrispthoAlex](https://github.com/CrispthoAlex)) & [David Orejuela]([https://github.com/daorejuela1](https://github.com/daorejuela1))
+Code by [Crispthofer Murrain]((https://github.com/CrispthoAlex)) & [David Orejuela]((https://github.com/daorejuela1))
