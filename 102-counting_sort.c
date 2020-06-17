@@ -73,6 +73,10 @@ void counting_sort(int *array, size_t size)
 	{
 		array[i] = output_array[i];
 	}
+	free(output_array);
+	free(sum_array);
+	free(count_array);
+	free(index_array);
 }
 
 /**
