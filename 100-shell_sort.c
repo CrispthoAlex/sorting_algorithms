@@ -9,46 +9,28 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t pass = 0, gap = 1;
-	unsigned int offset = 0, multiplier = 0;
+	size_t i = 0, gap = 1;
+	int actual;
 
 	if (size < 2 || !array)
 		return;
 	while (gap < size / 3)
 		gap = gap * 3 + 1;
-		for (pass = 0; pass < gap; pass++)
-		{
-			if (pass != 0)
-				offset = pass;
-			multiplier = size / gap;
-			while (multiplier != 0)
-			{
-				printf("multiplicador : %d\n", (int) multiplier);
-				printf("pareja encontrada %d, con %d\n",(int) array[pass + multiplier * gap] ,(int) array[pass + (multiplier - 1) * gap ]);
-				multiplier--;
-			}
-			while (array[pass + gap] < array[offset])
-			{
-				swap_int(&array[pass + gap], &array[offset]);
-				print_array(array, size);
-				pass = offset;
-				if (pass != 0)
-					offset--;
-			}
-		}
-	/*Sorted by normal insert sort*/
-	for (pass = 0; pass < size; pass++)
+	while (gap > 0)
 	{
-		if (pass != 0)
-			offset = pass - 1;
-		while (array[pass] < array[offset])
+		for (i = 0; i < size; i += gap)
 		{
-			swap_int(&array[pass], &array[offset]);
-			print_array(array, size);
-			pass = offset;
-			if (pass != 0)
-				offset--;
+			if ((i + gap) >= size)
+				break;
+			actual = i;
+			while (actual >= 0 && array[actual + gap] < array[actual])
+			{
+				swap_int(&array[actual + gap], &array[actual]);
+				actual -= gap;
+			}
 		}
+		gap = (gap - 1) / 3;
+		print_array(array, size);
 	}
 }
 
